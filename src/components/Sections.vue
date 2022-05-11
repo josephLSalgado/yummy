@@ -12,7 +12,7 @@ export default {
 <template>
     <div class="sections">
         <Section section="Categorías" url="#/categorias"/>
-        <Section section="Restaurantes" url="#/restaurantes"/>
+        <Section section="Restaurantes" url="#/proximamente"/>
     </div>
 </template>
 

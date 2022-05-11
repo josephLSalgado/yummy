@@ -15,8 +15,8 @@ const routes = [
     component: CategoriesView
   },
   {
-    path: '/restaurantes',
-    name: 'restaurants',
+    path: '/proximamente',
+    name: 'proximamente',
     component: RestaurantsView
   }
 ]
