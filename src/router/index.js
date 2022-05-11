@@ -15,7 +15,7 @@ const routes = [
     component: CategoriesView
   },
   {
-    path: '/restaurants',
+    path: '/restaurantes',
     name: 'restaurants',
     component: RestaurantsView
   }
