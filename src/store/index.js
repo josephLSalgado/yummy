@@ -9,19 +9,35 @@ export default createStore({
       categories: {
         1: {
           name: 'Ensaladas',
+          path: '#/proximamente',
           image: require('@/assets/ensalada.png')
         },
         2: {
           name: 'Postres',
+          path: '#/proximamente',
           image: require('@/assets/postre.png'),
         },
         3: {
           name: 'Bebidas',
+          path: '#/proximamente',
           image: require('@/assets/bebidas-sin-alcohol.png')
         },
         4: {
           name: 'Comida rápida',
-          image: require('@/assets/comida-chatarra.png')
+          path: '#/fastfood',
+          image: require('@/assets/comida-chatarra.png'),
+          products: {
+            1: {
+              name: 'Hamburguesa Bacon Swiss Big Chicken Fillet',
+              image: require('@/assets/bacon-swiss.jpg'),
+              price: '$45.00'
+            },
+            2: {
+              name: 'Pizza Pepperoni especial',
+              image: require('@/assets/pepperoni-especial.png'),
+              price: '$120.00'
+            }
+          }
         }
       }
     },
@@ -46,12 +62,49 @@ export default createStore({
     },
     getSocial(state) {
       return state.social;
+    },
+    getFastFood(state) {
+      return state.sections.categories[4].products;
     }
   },
   mutations: {
   },
   actions: {
     textToSpeech(state, text) {
+      synthesizer = new SpeechSDK.SpeechSynthesizer(speechConfig);
+      synthesizer.speakTextAsync(
+        text,
+        function (result) {
+          window.console.log(result);
+          synthesizer.close();
+          synthesizer = undefined;
+        },
+        function (err) {
+          window.console.log(err);
+          synthesizer.close();
+          synthesizer = undefined;
+        }
+      );
+    },
+    speechDetails(state, {name, price}) {
+      let text = name + " a " + price;
+      synthesizer = new SpeechSDK.SpeechSynthesizer(speechConfig);
+      synthesizer.speakTextAsync(
+        text,
+        function (result) {
+          window.console.log(result);
+          synthesizer.close();
+          synthesizer = undefined;
+        },
+        function (err) {
+          window.console.log(err);
+          synthesizer.close();
+          synthesizer = undefined;
+        }
+      );
+    },
+    speechAdd(state, name) {
+      let text = "¿Quieres comprar " + name + "?";
       synthesizer = new SpeechSDK.SpeechSynthesizer(speechConfig);
       synthesizer.speakTextAsync(
         text,
