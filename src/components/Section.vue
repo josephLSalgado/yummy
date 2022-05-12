@@ -8,7 +8,7 @@ export default {
 <template>
     <!-- Llama la función cuando se entra al div y le enviamos la variable 
         section -->
-    <div class="section" @click="$store.dispatch('textToSpeech', section)">
+    <div class="section" @keyup="$store.dispatch('textToSpeech', section)">
         <a :href="url"><h1>{{ section }}</h1></a>
     </div>
 </template>

@@ -1,25 +1,26 @@
 <script>
 export default {
     name: 'Item',
-    props: ['name', 'src_image', 'price'],
+    props: ['name', 'src_image', 'price']
 }
-const text = 'Agregar';
 </script>
 
 <template>
     <div class="item">
-        <div class="container-image" @click="$store.dispatch('speechDetails', {name, price})">
+        <button class="container-image" @keyup="$store.dispatch('speechDetails', {name, price})">
             <div class="image">
                 <img :src="src_image" :alt="name">
             </div>
-        </div>
+        </button>
         <div class="container-description">
             <div class="description">
                 <span class="name">{{ name }}</span>
             </div>
             <div class="cart">
                 <span class="price">{{ price }}</span>
-                <button class="add" @click="$store.dispatch('speechAdd', name)">+</button>
+                <button class="add" @keyup="$store.dispatch('speechAdd', name)">
+                    +
+                </button>
             </div>
         </div>
     </div>
@@ -37,7 +38,7 @@ const text = 'Agregar';
     justify-content: center;
     align-items: center;
     width: 350px;
-    height: 250px;
+    height: 256px;
     background: #C8D96F;
     border: 3px solid #C8D96F;
     border-top-left-radius: 20px;

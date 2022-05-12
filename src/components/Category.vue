@@ -8,7 +8,7 @@ export default {
 <template>
     <!-- Llama la función cuando se entra al div y le enviamos la variable 
         category -->
-    <div class="category" @click="$store.dispatch('textToSpeech', category)">
+    <div class="category" @keyup="$store.dispatch('textToSpeech', category)">
         <a :href="url">
             <div class="container-image">
                 <div class="image">

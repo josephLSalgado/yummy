@@ -6,7 +6,7 @@ export default {
 
 <template>
     <div class="login">
-        <button class="login-button" @click="$store.dispatch('textToSpeech', 
+        <button class="login-button" @keyup="$store.dispatch('textToSpeech', 
             'Iniciar sesión')">
             Iniciar sesión
         </button>
