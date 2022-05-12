@@ -6,7 +6,10 @@ export default {
 
 <template>
     <div class="login">
-        <button class="login-button">Iniciar sesión</button>
+        <button class="login-button" @click="$store.dispatch('textToSpeech', 
+            'Iniciar sesión')">
+            Iniciar sesión
+        </button>
     </div>
 </template>
 

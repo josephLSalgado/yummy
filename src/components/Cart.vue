@@ -6,7 +6,8 @@ export default {
 
 <template>
     <div class="cart">
-        <button class="cart">
+        <button class="cart" @click="$store.dispatch('textToSpeech', 
+            'Carrito de compras')">
             <div class="image"></div>
         </button>
     </div>
