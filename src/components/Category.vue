@@ -1,7 +1,7 @@
 <script>
 export default {
     name: 'Category',
-    props: ['category', 'src_image']
+    props: ['category', 'src_image', 'url']
 }
 </script>
 
@@ -9,14 +9,16 @@ export default {
     <!-- Llama la función cuando se entra al div y le enviamos la variable 
         category -->
     <div class="category" @click="$store.dispatch('textToSpeech', category)">
-        <div class="container-image">
-            <div class="image">
-                <img :src="src_image" :alt="category">
+        <a :href="url">
+            <div class="container-image">
+                <div class="image">
+                    <img :src="src_image" :alt="category">
+                </div>
             </div>
-        </div>
-        <div class="container-text">
-            <h2>{{ category }}</h2>
-        </div>
+            <div class="container-text">
+                <h2>{{ category }}</h2>
+            </div>
+        </a>
     </div>
 </template>
 
@@ -27,6 +29,11 @@ export default {
     justify-content: center;
     width: fit-content;
     height: fit-content;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 .container-image {

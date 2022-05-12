@@ -15,7 +15,8 @@ export default {
         <ul class="categories-list">
             <li v-for="(categories, index) in $store.getters.getCategories" 
             :key="index">
-            <Category :category="categories.name" :src_image="categories.image"/>
+            <Category :category="categories.name" :src_image="categories.image"
+                :url="categories.path"/>
         </li>
         </ul>
     </div>
