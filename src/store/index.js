@@ -36,6 +36,21 @@ export default createStore({
               name: 'Pizza Pepperoni especial',
               image: require('@/assets/pepperoni-especial.png'),
               price: '$120.00'
+            },
+            3: {
+              name: 'Pizza Cuatro Quesos',
+              image: require('@/assets/cuatro-quesos.png'),
+              price: '$99.00'
+            },
+            4: {
+              name: 'Subway Pollo Parmesano',
+              image: require('@/assets/pollo-parmesano.jpg'),
+              price: '$55.00'
+            },
+            5: {
+              name: 'Subway Pollo Teriyaki',
+              image: require('@/assets/pollo-teriyaki.jpg'),
+              price: '$65.00'
             }
           }
         }
